@@ -1,0 +1,99 @@
+/* events.css */
+.event-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.event-card {
+    width: calc(17% - 20px); /* Adjust the width as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 30px;
+    margin-inline-start: 15px;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 14px;
+    flex-grow: 1; /* Ensure the description takes available space */
+    margin-bottom: 10px;
+}
+
+.event-card .event-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #2862ff;
+    border: 1px solid #2862ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.event-card .event-link:hover {
+    background-color: #2862ff;
+    color: white;
+}
+
+
+.delete-event-btn:hover {
+    background-color: #f5f5f5; /* Darker red when hovered */
+}
+
+.delete-event-btn{
+    background-color: #f04e1f;
+}
+
+.event-delete-form{
+    position: relative;
+    top: -110px;
+    right: -134px;
+    background-color: transparent; /* Transparent background color */
+    border: none; /* Remove the border */
+    width: 0px;
+    height: 0px;
+    /* scale height and width down */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    outline: none;
+}
+
+.add-event-btn {
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.add-event-btn:hover {
+    background-color: lightblue;
+    transform: scale(1.1);
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+
+}
+
+.go-to-events-btn:hover {
+    transform: scale(1.1);
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}

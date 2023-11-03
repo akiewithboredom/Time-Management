@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='timer.css') }}">
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="logo-container">
+            <a href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+            </a>
+        </nav>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <h1>Countdown Timer</h1>
+    <div class="timer-input">
+        <label for="timerLength">Enter Timer Length (minutes):</label>
+        <input type="number" id="timerLength" min="1" value="25">
+    </div>
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+    
+    <div class="countdown">
+        <div>
+            <p class="heading">HOURS</p>
+            <div class="time" id="countdown-hours">0</div>
+        </div>
+        <div>
+            <p class="heading">MINUTES</p>
+            <div class="time" id="countdown-minutes">0</div>
+        </div>
+        <div>
+            <p class="heading">SECONDS</p>
+            <div class="time" id="countdown-seconds">0</div>
+        </div>
+        <audio id="alarm" src="static/timerdone.wav"></audio>
+    </div>
+    
+</body>
+</html>

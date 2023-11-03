@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='calendar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modern-calendar.css') }}"> <!-- Include new CSS file for modern design -->
+</head>
+<body>
+    <header class="header">
+        <a href="{{ url_for('dashboard') }}">
+            <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+        </a>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <div class="calendar-container">
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <h2 id="current-month-year"></h2>
+                <button id="next-month">&gt;</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="day-header">Sun</th>
+                        <th class="day-header">Mon</th>
+                        <th class="day-header">Tue</th>
+                        <th class="day-header">Wed</th>
+                        <th class="day-header">Thu</th>
+                        <th class="day-header">Fri</th>
+                        <th class="day-header">Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                    <!-- Calendar dates will be generated here using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="task-list">
+            <h2 class="task-list-header">Tasks for <span id="selected-date">{{ current_date.strftime('%a, %b %d') }}</span></h2>
+            <ul id="task-list">
+                {% for task in tasks %}
+                    {% if task.date_end == current_date %}
+                    <a href="{{ url_for('tasks') }}">
+                        <li class="task-item">{{ task.task_name }} [{{ task.tag }}]</li>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+</body>
+</html>

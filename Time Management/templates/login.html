@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="{{ url_for('static', filename='timely.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            <div class="left-aligned">
+                {{ form.username.label }}
+            </div>
+            {{ form.username(size=32) }}<br>
+
+            <div class="left-aligned">
+                {{ form.password.label }}
+            </div>
+            {{ form.password(size=32) }}<br>
+
+            {{ form.submit }}
+        </form>
+
+        <p class="left-aligned">Don't have an account? <a href="{{ url_for('register')}}">Sign Up</a></p>
+    </div>
+</body>
+
+</html>

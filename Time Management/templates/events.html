@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="logo-container">
+            <a href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+            </a>
+        </nav>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <!-- events.html -->
+    {% block content %}
+        <h1>Upcoming Events</h1>
+        <a href="{{ url_for('create_event') }}" class="add-event-btn">Add Events</a>
+        <div class="event-cards">
+            {% for event in events %}
+            <div class="event-card">
+                <h3>{{ event.event_name }}</h3>
+                <p>Date: {{ event.event_date }}{% if event.event_time %} at {{ event.event_time.strftime('%I:%M %p')}}{% endif %}</p>
+                {% if event.description %}
+                  <p>Description: {{ event.description }}</p>
+                {% endif %}
+                {% if event.link %}
+                <a href="{{ event.link }}" class="go-to-events-btn" target="_blank">Go to Events</a>
+                {% endif %}
+                <form action="{{ url_for('delete_event', event_id=event.id) }}" method="POST" class="event-delete-form">
+                  <button type="submit" class="delete-event-btn" onclick="return confirm('Are you sure you want to delete this event?')">X</button>
+                </form>
+              </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

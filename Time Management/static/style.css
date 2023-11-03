@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'Gabarito';
+  src: url("C:\\Users\\lordc\\Downloads\\Time Management\\static\\Gabarito-VariableFont_wght.ttf") format('truetype');
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Gabarito', sans-serif;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 40%; /* Adjust this value to shift the logo vertically */
+  transform: translateY(-50%); /* Center the logo vertically */
+  z-index: 1;
+}
+
+.button {
+  font-family: 'Gabarito', sans-serif;
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 52%; /* Position the button container slightly below the logo */
+  transform: translateY(-50%); /* Center the button container vertically */
+}
+
+.login-button,
+.register-button {
+  display: inline-block;
+  width: 400px;
+  background-color: #2862ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 15px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #008CBA;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+/* General styling */
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Gabarito', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #2862ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form styling */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #2862ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0; /* Remove rounded corners */
+}
+
+input[type="submit"]:hover {
+  background-color: #008CBA;
+}
+
+/* General styling */
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Gabarito', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #2862ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form styling */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #2862ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0; /* Remove rounded corners */
+}
+
+input[type="submit"]:hover {
+  background-color: #008CBA;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Gabarito', sans-serif;
+  text-align: center;
+}
+
+/* Main container styling */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Make the container full height */
+}
+
+.left-aligned {
+  text-align: left; /* Align non-input text to the left */
+}
+
+/* Heading styling */
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+
+form {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Input field styling */
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+/* Submit button styling */
+
+input[type="submit"] {
+  width: 112%;
+  padding: 15px;
+  background-color: #2862ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #2352dc; /* Darken the background color on hover */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left; /* Align label text to the left */
+  color: #808080; /* Set label text color to a grayer shade */
+  margin-top: 5px; /* Reduce the space between label and input box */
+}
+
+/* Link styling */
+
+a {
+  color: #2862ff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

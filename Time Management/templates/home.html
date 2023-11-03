@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <img src="{{ url_for('static', filename='timely.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+    <div class="button-container">
+        <div class="button-container">
+            <a href="{{ url_for('login') }}" class="button login-button">Login</a>
+            <a href="{{ url_for('register') }}" class="button register-button">Register</a>
+        </div>
+    </div>
+</body>
+</html>

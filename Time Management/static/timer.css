@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+body {
+  background-color: #f0f0f0; /* A lighter gray background */
+  font-family: 'Gabarito', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #000000;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.timer-input {
+  margin: 20px 0;
+  color: #000000;
+}
+
+label {
+  color: #000000;
+  font-size: 20px;
+}
+
+.timer-input input {
+  font-size: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 0px;
+  border-radius: 8px; /* Slightly increased border radius for a modern look */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+button#start, button#reset {
+  min-width: 120px;
+  margin: 20px 10px;
+  padding: 12px; /* Increased padding for a more modern button */
+  font-size: 20px;
+  background-color: #2352dc;
+  color: #fff;
+  border-radius: 8px; /* Slightly increased border radius for a modern look */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button#start:hover, button#reset:hover {
+  background-color: #1f44b7;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  color: #333333; /* Slightly darker gray for the heading */
+  font-size: 20px; /* Increased font size */
+  text-transform: uppercase;
+  margin: 10px 20px; /* Added margin for spacing */
+}
+
+.time {
+  background-color: #00175a;
+  color: #FFFFFF;
+  font-size: 120px; /* Slightly increased font size for the time */
+  width: 150px;
+  margin: 0 10px;
+  padding: 20px; /* Increased padding for the time display */
+  border-radius: 10px; /* Increased border radius for a more rounded appearance */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}

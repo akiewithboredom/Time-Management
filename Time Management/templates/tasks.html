@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tasks.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="logo-container">
+            <a href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+            </a>
+        </nav>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('add_tasks') }}">Add Task</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <section class="tasks-content">
+        <h2>Tasks</h2>
+        <div class="task-container">
+            <div class="task-row">
+                <!-- Loop through unique tags and create an accordion for each -->
+                {% for tag, tasks in task_dict.items() %}
+                <div class="task-accordion accordion-toggle">
+                    <div class="tag">{{ tag }}</div>
+                    <div class="task-panel">
+                        <!-- Loop through tasks with the current tag and display them -->
+                        {% for task in tasks %}
+                        <div class="task-card {% if task.priority == 'High Priority' %}very-high
+                                        {% elif task.priority == 'Medium Priority' %}medium
+                                        {% else %}low{% endif %}">
+                            <p class="task-name">{{ task.task_name }}</p>
+                            <p>{{task.priority}}</p>
+                            <p class="due-date">Due {{ task.date_end.strftime('%a, %b %d') }}</p>
+                            <div class="additional-info">
+                                This task is for {{ task.tag }} and began on {{ (task.date_start.strftime('%a, %b %d')) }}.
+                            </div>
+                            <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" class="task-delete-form">
+                                <button type="submit" class="delete-task-btn" onclick="return confirm('Are you sure you want to delete this task?')">X</button>
+                            </form>                        
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+</body>
+</html>

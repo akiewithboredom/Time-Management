@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="logo-container">
+            <a href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+            </a>
+        </nav>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <h1>Add Task</h1>
+    <form method="POST">
+        <label for="description">Task Name:</label>
+        <input type="text" name="description" required><br>
+        <label for="tag">Tag:</label>
+        <input type="text" name="tag"><br>
+        <label for="priority">Priority:</label>
+        <select name="priority">
+            <option value="Low Priority">Low Priority</option>
+            <option value="Medium Priority">Medium Priority</option>
+            <option value="High Priority">High Priority</option>
+        </select><br>
+        <label for="date_start">Start Date:</label>
+        <input type="date" name="date_start"><br>
+        <label for="date_end">End Date:</label>
+        <input type="date" name="date_end"><br>
+        <input type="submit" value="Add Task">
+    </form>
+</body>
+</html>

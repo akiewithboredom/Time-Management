@@ -1,0 +1,78 @@
+/* Calendar styles */
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.calendar {
+    width: 70%;
+    padding: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#prev-month, #next-month {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#current-month-year {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2862ff;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+}
+
+#selected-date {
+    font-weight: bold;
+}
+
+/* Task list styles */
+.task-list {
+    width: 30%;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+/* Add this style for the highlighted current date cell */
+.current-date {
+    background-color: #2862ff; /* You can use your preferred highlight color */
+    color: white;
+    opacity: .9;
+}
+

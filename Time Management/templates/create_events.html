@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="logo-container">
+            <a href="{{ url_for('dashboard') }}">
+                <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+            </a>
+        </nav>
+        <nav class="nav-links">
+            <a href="{{ url_for('calendar') }}">Calendar</a>
+            <a href="{{ url_for('tasks') }}">Tasks</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('timer') }}">Timer</a>
+        </nav>
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+        </div>
+    </header>
+    <h1>Add Event</h1>
+    <form method="POST">
+        <label for="event_name">Event Name:</label>
+        <input type="text" name="event_name" required><br>
+        <label for="description">Description:</label>
+        <input type="description" name="deescription"><br>
+        <label for="event_date">Event Date:</label>
+        <input type="date" name="event_date"><br>
+        <label for="event_time">Event Time:</label>
+        <input type="time" name="event_time"><br>
+        <label for="link">Link:</label>
+        <input type="text" name="link"><br>
+        <input type="submit" value="Add Event">
+    </form>
+</body>
+</html>

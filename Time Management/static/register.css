@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Gabarito';
+    src: url("C:\\Users\\lordc\\Downloads\\Time Management\\static\\Gabarito-VariableFont_wght.ttf") format('truetype');
+  }
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Gabarito', sans-serif;
+    text-align: center;
+  }
+  
+  /* Main container styling */
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Make the container full height */
+  }
+
+  .left-aligned {
+    text-align: left; /* Align non-input text to the left */
+  }
+  
+  /* Heading styling */
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  
+  form {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styling */
+  
+  input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  
+  /* Submit button styling */
+  
+  input[type="submit"] {
+    width: 112%;
+    padding: 15px;
+    background-color: #2862ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #2352dc; /* Darken the background color on hover */
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* Align label text to the left */
+    color: #808080; /* Set label text color to a grayer shade */
+    margin-top: 5px; /* Reduce the space between label and input box */
+  }
+  
+  /* Link styling */
+  
+  a {
+    color: #2862ff;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

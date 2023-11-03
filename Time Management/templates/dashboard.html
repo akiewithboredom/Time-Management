@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+  <header class="header">
+    <nav class="logo-container">
+      <a href="{{ url_for('dashboard') }}">
+        <img src="{{ url_for('static', filename='timely-alternative.png') }}" alt="Your Logo" class="logo" width="150" height="auto">
+      </a>
+    </nav>
+    <div class="nav-links">
+      <a href="{{ url_for('calendar') }}">Calendar</a>
+      <a href="{{ url_for('tasks') }}">Tasks</a>
+      <a href="{{ url_for('events') }}">Events</a>
+      <a href="{{ url_for('timer') }}">Timer</a>
+    </div>
+    <div class="logout-container">
+      <a href="{{ url_for('logout') }}" class="rounded-button">Logout</a>
+    </div>
+  </header>
+  <div class="main-container">
+    <div class="welcome-container">
+      <h1>Welcome Back, {{ first_name }}!</h1>
+    </div>
+    <div class="tasks-container">
+      <h2>Your Tasks</h2>
+      <div class="card-container">
+        {% for task in tasks %}
+          <div class="card">
+            <h3>{{ task.task_name }}</h3>
+            <p>{{ task.tag }}</p>
+            <p>{{task.priority}}</p>
+            <p class="due-date">Due {{ task.date_end.strftime('%a, %b %d') }}</p>
+            <div class="additional-info">
+                This task is for {{ task.tag }} and began on {{ (task.date_start.strftime('%a, %b %d')) }}.
+            </div>
+          </div>
+        {% endfor %}
+      </div>      
+      <a href="{{ url_for('tasks') }}" class="rounded-button">View All Tasks</a>
+    </div>
+    <div class="events-container">
+      <h2>Your Events</h2>
+      <div class="card-container">
+        {% for event in events %}
+          <div class="card">
+            <h3>{{ event.event_name }}</h3>
+            <p>{{ event.event_date }}</p>
+            <p>{{ event.event_time.strftime('%I:%M %p') }}</p>
+            <a href="{{ event.link }}">Go to event</a>
+          </div>
+        {% endfor %}
+      </div>      
+      <a href="{{ url_for('events') }}" class="rounded-button">View All Events</a>
+    </div>
+  </div>
+</body>
+</html>
